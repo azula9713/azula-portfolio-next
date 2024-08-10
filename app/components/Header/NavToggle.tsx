@@ -2,9 +2,7 @@
 
 import { useEffect } from "react";
 
-type Props = {};
-
-function NavToggle({}: Props) {
+function NavToggle() {
   //if open close when user clicks outside of the menu
   useEffect(() => {
     let scrollListenerTimeout: NodeJS.Timeout;
