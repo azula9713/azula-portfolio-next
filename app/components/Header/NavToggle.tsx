@@ -1,6 +1,55 @@
+"use client";
+
+import { useEffect } from "react";
+
 type Props = {};
 
 function NavToggle({}: Props) {
+  //if open close when user clicks outside of the menu
+  useEffect(() => {
+    let scrollListenerTimeout: NodeJS.Timeout;
+
+    const handleCloseMenu = (e: Event) => {
+      const navMenu = document.getElementById("navMenu");
+      const toggle = document.getElementById(
+        "hs-navbar-header-floating-collapse"
+      );
+
+      if (navMenu && toggle) {
+        const ariaExpanded = toggle.getAttribute("aria-expanded");
+
+        // Close the menu if it's open
+        if (ariaExpanded === "true") {
+          // For clicks, ensure the target is outside the navMenu
+          if (e.type === "click" && navMenu.contains(e.target as Node)) {
+            return;
+          }
+
+          // Simulate a click on the toggle button to close the menu
+          toggle.click();
+        }
+      }
+    };
+
+    const addScrollListener = () => {
+      scrollListenerTimeout = setTimeout(() => {
+        document.addEventListener("scroll", handleCloseMenu, true);
+      }, 100); // Small delay before activating the scroll listener
+    };
+
+    // Listen for clicks and scrolls
+    document.addEventListener("click", handleCloseMenu);
+    document.addEventListener("click", addScrollListener, true);
+
+    return () => {
+      document.removeEventListener("click", handleCloseMenu);
+      document.removeEventListener("scroll", handleCloseMenu, true);
+      document.removeEventListener("click", addScrollListener);
+
+      clearTimeout(scrollListenerTimeout);
+    };
+  }, []);
+
   return (
     <div className="md:hidden">
       {/* Toggle Button */}

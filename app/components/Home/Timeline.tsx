@@ -24,12 +24,14 @@ function Timeline() {
 
       <TimelineItem
         designation="Senior Software Engineer at Swivel Tech"
-        endYear="December 2020"
-        startYear="June 2020"
+        endYear="October 2023"
+        startYear="April 2022"
         tasks={[
-          "Maintained software products, including programs, web pages, and databases.",
-          "Analyzed solutions and coding fixes for software problems.",
-          "Redesigned the web portal to create a more visually appealing, user-friendly experience.",
+          "Mentored and developed junior developers and engineers to increase productivity.",
+          "Coordinated with project managers to meet development timelines and plan testing.",
+          "Performed estimates of work hours and tracked progress using Agile and Scrum methodology.",
+          "Performed root cause analysis of problems, documented faults in the tracking system and generated daily reports.",
+          "Developed a Fin Tech product and technology roadmap and strategy from concept to launch.",
         ]}
         summary="One of the best companies I have worked for. The company has a great culture and the team is very supportive.Managers are still adapting to the growth I think, but everyone has to. Great place to work."
         icon={
@@ -94,9 +96,9 @@ function Timeline() {
           />
         }
         tasks={[
-          "Analyzed solutions and coding fixes for software problems.",
-          "Worked on multiple projects using React and Next JS.",
-          "Met with stakeholders, product teams, and customers throughout the system development life cycle.",
+          "Maintained software products, including programs, web pages, and databases.",
+          "'Analyzed solutions and coding fixes for software problems.",
+          "Redesigned the web portal to create a more visually appealing, user-friendly experience.",
         ]}
         summary="The place I learned the most about time management and how to work under pressure. Working in multiple teams depending on the project was a great experience and certainly helped me grow as a developer."
       />
